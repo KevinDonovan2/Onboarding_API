@@ -1,0 +1,35 @@
+openapi: '3.0.2'
+info:
+  title: Onboarding API
+  version: '1.2'
+  description: |-
+    Mon STD22046
+servers:
+  - url: https://STD22046.com
+paths:
+  /test:
+    get:
+      responses:
+        '200':
+          description: OK 
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/status'
+components:
+  schemas: 
+    status: 
+      type: object
+      properties:
+        id : 
+          type: number
+          example: 1
+        name : 
+          type: string
+          example: "Donovan"
+        birthday : 
+          type: string
+          format: date
+          example: 09-07-2002
