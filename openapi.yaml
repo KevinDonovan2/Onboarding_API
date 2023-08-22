@@ -10,6 +10,8 @@ paths:
   /students:
     get:
       summary: show the student
+      tags:
+        - "Students"
       responses:
         "200":
           description: OK
@@ -18,9 +20,11 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/status"
+                  $ref: "#/components/schemas/student"
     post:
       summary: add a new student
+      tags:
+        - "Students"
       responses:
         "200":
           description: OK
@@ -29,9 +33,11 @@ paths:
               schema:
                 type: array
                 items:
-                $ref: "#/components/schemas/status"
+                $ref: "#/components/schemas/student"
     put:
       summary: add a new student
+      tags:
+        - "Students"
       responses:
         "200":
           description: OK
@@ -40,9 +46,11 @@ paths:
               schema:
                 type: array
                 items:
-                $ref: "#/components/schemas/status"
+                $ref: "#/components/schemas/student"
     delete:
       summary: remove student
+      tags:
+        - "Students"
       responses:
         "200":
           description: OK
@@ -51,10 +59,37 @@ paths:
               schema:
                 type: array
                 items:
-                $ref: "#/components/schemas/status"
+                $ref: "#/components/schemas/student"
+  /teachers:
+    get:
+      summary: show the teacher
+      tags:
+        - "Teacher"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/teacher"
+    put:
+      summary: add a new teacher
+      tags:
+        - "Teacher"
+      responses:
+        "200" :
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/teacher"
 components:
   schemas:
-    status:
+    student:
       type: object
       properties:
         id:
@@ -67,3 +102,24 @@ components:
           type: string
           format: date
           example: 09-07-2002
+    teacher:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+        name:
+          type: string
+          example: "RAMAROZAKA"
+        last name:
+          type: string
+          example: "Toky"
+        code:
+          type: string
+          example: PROG1
+        duree:
+          type: integer 
+          example: 2
+          
+
+
